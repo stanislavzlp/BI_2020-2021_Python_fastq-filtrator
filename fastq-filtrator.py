@@ -78,6 +78,10 @@ def sort_by_length(read):
         sort_by_GC(read, min_GC, max_GC)
     else:
         Failed += 1
+        if keep_filtered:
+            for i in range(len(read)):
+                failed_file.write(read[i])
+                failed_file.write("\n")
 try:
     with open(file_name, "r") as file:
         lines = []
