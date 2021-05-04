@@ -40,8 +40,10 @@ if ".fastq" in sys.argv[len(sys.argv) - 1]:
     print("Начинается обработка вашего файла:", file_name)
 else:
     print(
-        "\t\t\t\t<<<!!!ОШИБКА!!!>>>\nНе обнаружен файл формата .fastq. Работа приложения прекращена. "
-        "Для адекватной работы скрипта укажите файл формата .fastq в качестве последнего аргумента")
+        "\t\t\t\t<<<!!!ОШИБКА!!!>>>\nНе обнаружен файл формата.fastq.\
+ Работа приложения прекращена."
+        "Для адекватной работы скрипта укажите файл формата\
+ .fastq в качестве последнего аргумента")
     sys.exit()
 
 Passed = 0
@@ -50,7 +52,9 @@ Failed = 0
 passed_file = open("{}_passed.fastq".format(output_base_name), "w")
 if keep_filtered:
     failed_file = open("{}_failed.fastq".format(output_base_name), "w")
-print("\t\t\t\t!ПРЕДУПРЕЖДЕНИЕ!\nЕсли вы указали в качестве output_base_name имя уже существующего файла, он будет перезаписан!")
+print("\t\t\t\t!ПРЕДУПРЕЖДЕНИЕ!\nЕсли вы указали в качестве\
+ output_base_name имя уже существующего файла, он будет перезаписан!")
+
 
 def sort_by_GC(read_GC, min_GC_sort=0, max_GC_sort=100):
     global Passed
@@ -72,6 +76,7 @@ def sort_by_GC(read_GC, min_GC_sort=0, max_GC_sort=100):
                 failed_file.write(read_GC[i])
                 failed_file.write("\n")
 
+
 def sort_by_length(read):
     global Failed
     if len(read[1]) >= min_len:
@@ -82,6 +87,8 @@ def sort_by_length(read):
             for i in range(len(read)):
                 failed_file.write(read[i])
                 failed_file.write("\n")
+
+
 try:
     with open(file_name, "r") as file:
         lines = []
@@ -96,7 +103,8 @@ try:
 except FileNotFoundError:
     print(
         "\t\t\t\t<<<!!!ОШИБКА!!!>>>"
-        "\nУказанный вами файл не обнаружен. Проверьте его наличие или правильность написания названия файла.")
+        "\nУказанный вами файл не обнаружен. \
+Проверьте его наличие или правильность написания названия файла.")
     sys.exit()
 
 print("Passed:", Passed)

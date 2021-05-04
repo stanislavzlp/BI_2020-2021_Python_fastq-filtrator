@@ -3,7 +3,7 @@ import sys
 
 def read_input():
 
-    if "--help" or 'h' or '-h' or '--h' in sys.argv:
+    if "--help" in sys.argv:
         print('Добро пожаловать в скудный --help')
         print("--min_length - параметр минимальной длины\
  прочтения\

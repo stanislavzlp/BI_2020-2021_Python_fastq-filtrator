@@ -1,9 +1,10 @@
-from args import read_input
+from fastq_filtrator.argument_reader import read_input
 import sys
 
 
 def main():
-    min_len, keep_filtered, min_GC, max_GC, output_base_name, file_name = read_input()
+    (min_len, keep_filtered, min_GC, max_GC,
+     output_base_name, file_name) = read_input()
     Passed = 0
     Failed = 0
 

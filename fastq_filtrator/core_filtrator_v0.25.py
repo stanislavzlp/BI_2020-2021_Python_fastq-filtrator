@@ -1,18 +1,18 @@
-from argument_reader import read_input
+from fastq_filtrator.argument_reader import read_input
 from shutil import copyfile
-from keep_filtered_sort import sort_by_len_GC_keep_filtered
-from keep_filtered_sort import sort_only_len_keep_filtered
-from keep_filtered_sort import sort_only_GC_keep_filtered
-from trash_filtered_sort import sort_by_len_GC_trash_filtered
-from trash_filtered_sort import sort_only_GC_trash_filtered
-from trash_filtered_sort import sort_only_len_trash_filtered
+from fastq_filtrator.keep_filtered_sort import sort_by_len_GC_keep_filtered
+from fastq_filtrator.keep_filtered_sort import sort_only_len_keep_filtered
+from fastq_filtrator.keep_filtered_sort import sort_only_GC_keep_filtered
+from fastq_filtrator.trash_filtered_sort import sort_by_len_GC_trash_filtered
+from fastq_filtrator.trash_filtered_sort import sort_only_GC_trash_filtered
+from fastq_filtrator.trash_filtered_sort import sort_only_len_trash_filtered
 
 OVERWRITE_WARNING = "\t\t\t\t!WARNING!\nЕсли вы указали в качестве output_base_name\
 имя уже существующего файла, он будет перезаписан!"
 
 
-def main_sorter(min_len, keep_filtered, min_GC,
-                max_GC, output_base_name, file_name):
+def main_sorter(min_len: int, keep_filtered: bool, min_GC: int,
+                max_GC: int, output_base_name: str, file_name: str):
 
     print("Минимальная длина прочтений:", min_len)
     print("Нижний порог процентного соотношения GC:", min_GC)
@@ -29,8 +29,8 @@ def main_sorter(min_len, keep_filtered, min_GC,
                                 max_GC, output_base_name, file_name)
 
 
-def sort_and_keep_filtered(min_len, min_GC, max_GC,
-                           output_base_name, file_name):
+def sort_and_keep_filtered(min_len: int, min_GC: int,
+                           max_GC: int, output_base_name: str, file_name: str):
 
     print(OVERWRITE_WARNING)
 
@@ -48,9 +48,9 @@ def sort_and_keep_filtered(min_len, min_GC, max_GC,
                                          output_base_name, file_name)
 
 
-def sort_and_trash_filtered(min_len, min_GC, max_GC,
-                            output_base_name, file_name):
-
+def sort_and_trash_filtered(min_len: int, min_GC: int,
+                            max_GC: int, output_base_name: str,
+                            file_name: str):
     print(OVERWRITE_WARNING)
 
     if min_len == 0 and min_GC == 0 and max_GC == 0:
@@ -67,7 +67,7 @@ def sort_and_trash_filtered(min_len, min_GC, max_GC,
                                           output_base_name, file_name)
 
 
-def copy_fastq(output_base_name, file_name):
+def copy_fastq(output_base_name: str, file_name: str):
     print('Filtration arguments not found. Output file is equal to\
  non filtrated file')
     original = file_name
