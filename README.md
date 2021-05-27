@@ -13,7 +13,8 @@ The current version of the filtrator has two main functions:
 
 `--min_length` - takes a minimal length of the sequence. Sequences with less length will be filtrated away
 
-`--gc_bounds`  - takes two arguments: upper and lower border of GC content in sequence. For example: `--gc_bounds 20 70`. Sequences with GC content higher or lower
+`--gc_bounds`  - takes two arguments: upper and lower border of GC content in sequence.  
+For example: `--gc_bounds 20 70`. Sequences with GC content higher or lower
 than bounds will be rejected. 
 
 `--keep_filtered` - if this flag used rejected sequences will be also saved to the file. 
