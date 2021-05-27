@@ -1,13 +1,27 @@
 # BI_2020-2021_Python_fastq-filtrator
 
-Hello, my sweet heart.
+Fastq-filtrator project is a program for filtration fastq files and simple visualization main features of samples.
 
-There are my fastq-filtrator. 
+The current version of the filtrator has two main functions:
 
-This program has two functions:
+`filtration by length` - reads will be filtrated by the given length 
 
-__filtration by lenght__ - reads will be filtrated by the given lenght 
+`filtration by GC content` - reads will be filtrated by the given GC content percent
 
-__filtration by GC content__ - reads will be filtrated by the given GC content procent
 
+### Arguments
+
+`--min_length` - takes a minimal length of the sequence. Sequences with less length will be filtrated away
+
+`--gc_bounds`  - takes two arguments: upper and lower border of GC content in sequence. For example: `--gc_bounds 20 70`. Sequences with GC content higher or lower
+than bounds will be rejected. 
+
+`--keep_filtered` - if this flag used rejected sequences will be also saved to the file. 
+
+`--output_base_name` - name for output file or files. Standart output name `base_name`
+
+
+### Visualization
+
+Visualization is not available in the current version.
 
