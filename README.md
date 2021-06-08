@@ -1,8 +1,8 @@
-# BI_2020-2021_Python_fastq-filtrator
+# BI_2020-2021_Python_fastq-filter
 
-Fastq-filtrator project is a program for filtration fastq files and simple visualization main features of samples.
+Fastq-filter project is a program for filtration fastq files.
 
-The current version of the filtrator has two main functions:
+The current version of the filter has two main functions:
 
 `filtration by length` - reads will be filtrated by the given length 
 
