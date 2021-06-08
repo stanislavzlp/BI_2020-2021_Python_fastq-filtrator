@@ -1,6 +1,6 @@
 # BI_2020-2021_Python_fastq-filter
 
-Fastq-filter project is a program for filtration fastq files.
+Fastq-filter project is a program for filtration of fastq files.
 
 The current version of the filter has two main functions:
 
